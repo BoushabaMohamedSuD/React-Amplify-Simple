@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface Props {
     change: any,
-    submit: any
+    submit: any,
+    session: any
 }
 
 export const ValidationTextFields = (props: Props) => {
@@ -50,6 +51,12 @@ export const ValidationTextFields = (props: Props) => {
                 onClick={props.submit}
                 type="button"
             >submit</button>
+            <button
+                type="button"
+                onClick={props.session}
+            >
+                get curentsession
+            </button>
 
 
         </form>

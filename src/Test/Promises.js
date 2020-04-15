@@ -17,6 +17,8 @@ const codeBlocker = () => {
     })
 
 
+    //the loop still happen in the main thread
+    //only the resolve execute on a macro task
 
     /*return new Promise((resolve, reject) => {
         let i = 0;
@@ -36,6 +38,7 @@ const codeBlocker = () => {
         return 'good';
     })*/
 
+
 }
 test = () => {
     return Promise.resolve();
@@ -44,5 +47,7 @@ test = () => {
 codeBlocker().then((data) => {
     log(data)
 }).catch(err => log(err));
+
+
 
 log('hi');
