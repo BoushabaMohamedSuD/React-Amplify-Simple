@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { ValidationTextFields } from '../items/test';
 
 
-export class SignInHandler extends Component {
+export class SignUpHandler extends Component {
     userLogin = {
         username: "",
         password: "",
