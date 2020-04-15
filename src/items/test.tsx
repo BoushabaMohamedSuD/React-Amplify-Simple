@@ -13,55 +13,45 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function ValidationTextFields() {
+
+interface Props {
+    change: any,
+    submit: any
+}
+
+export const ValidationTextFields = (props: Props) => {
     const classes = useStyles();
 
     return (
-        <form className={classes.root} noValidate autoComplete="off">
+        <form
+            className={classes.root}
+            noValidate
+            autoComplete="off"
+            onChange={props.change}>
             <div>
-                <TextField error id="standard-error" label="Error" defaultValue="Hello World" />
+                <TextField id="standard-error"
+                    placeholder="name"
+                    name="username"
+                />
                 <TextField
-                    error
                     id="standard-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
+                    placeholder="password"
+                    name="password"
                 />
             </div>
             <div>
                 <TextField
-                    error
-                    id="filled-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    variant="filled"
-                />
-                <TextField
-                    error
-                    id="filled-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
-                    variant="filled"
+                    id="standard-error-helper-text"
+                    placeholder="email"
+                    name="email"
                 />
             </div>
-            <div>
-                <TextField
-                    error
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    variant="outlined"
-                />
-                <TextField
-                    error
-                    id="outlined-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
-                    variant="outlined"
-                />
-            </div>
+            <button
+                onClick={props.submit}
+                type="button"
+            >submit</button>
+
+
         </form>
     );
 }
